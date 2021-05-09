@@ -13,10 +13,16 @@ Dilengkapi:
 
 # HTTP-SERVER
 
-Gunakan `sudo npx http-server -c-1` (Ubuntu) di folder clone, lewat terminal (CLI), untuk menjalankan local HTTP server.
+Install package: [http-server](https://www.npmjs.com/package/http-server)
+
+Jalankan `sudo npx http-server -c-1` (Ubuntu) di top folder hasil clone lewat CLI, untuk menjalankan local HTTP server.
 
 `-c-1` menandakan `"cache-control": "no-cache"`.
 
 # LIVE-SERVER
 
-Bisa juga menggunakan [Live Server](https://www.npmjs.com/package/live-server) - cara install dan pemakaian dapat dilihat di link.
+Install package: [Live Server](https://www.npmjs.com/package/live-server)
+
+Ke folder clone lalu `public`, lalu jalankan `live-server --port=xxxx`.
+
+Gunakan `sudo` apabila diperlukan.
