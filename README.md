@@ -16,3 +16,7 @@ Dilengkapi:
 Gunakan `sudo npx http-server -c-1` (Ubuntu) di folder clone, lewat terminal (CLI), untuk menjalankan local HTTP server.
 
 `-c-1` menandakan `"cache-control": "no-cache"`.
+
+# LIVE-SERVER
+
+Bisa juga menggunakan [Live Server](https://www.npmjs.com/package/live-server) - cara install dan pemakaian dapat dilihat di link.
