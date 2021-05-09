@@ -1,0 +1,17 @@
+body {
+  background: #fafafa;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+.progress-wrap {
+  height: 4px;
+}
+.progress {
+  margin: 0;
+}
