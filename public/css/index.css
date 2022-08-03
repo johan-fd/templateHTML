@@ -1,17 +1,31 @@
 body {
-  background: #fff;
+    background: #fff;
 }
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
+
 main {
-  flex: 1 0 auto;
+    flex: 1 0 auto;
 }
+
 .progress-wrap {
-  height: 4px;
+    height: 4px;
 }
+
 .progress {
-  margin: 0;
+    margin: 0;
+}
+
+.gmeet>iframe {
+    height: calc(100vh - 120px);
+    width: 100%;
+    border: 0;
+    background-color: lightseagreen
+}
+
+.container-gmeet {
+    padding: 1rem 0;
+    height: calc(100vh - 68px);
+}
+
+.paddingRight1rem {
+    padding-right: 1rem;
 }
