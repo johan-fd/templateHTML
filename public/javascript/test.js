@@ -1,6 +1,20 @@
-// TEST LULU
+const runTesting = (boolean) => { // Boolean: true | false
+    "use strict"
+    localStorage.setItem("runTest",
+        JSON.stringify({ runTest: boolean }))
+}
+
+const isTestOn = () => {
+    "use strict"
+    const sessionTest = JSON.parse(localStorage
+            .getItem("runTest")) || {}
+    return sessionTest.runTest
+}
+
 const it = (description, functionName) => {
     "use strict"
+    if (!isTestOn()) return
+
     try {
         functionName()
         console.log('\x1b[32m%s\x1b[0m', '\u2714 ' + description)
@@ -13,6 +27,8 @@ const it = (description, functionName) => {
 
 const assert = (isTrue) => {
     "use strict"
+    if (!isTestOn()) return
+
     if (!isTrue)
         throw new Error()
 }
