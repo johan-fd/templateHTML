@@ -1,17 +1,22 @@
 const $start = $("#gmeet-start")
 const $stop = $("#gmeet-stop")
 const $gmeet = $("#gmeet")
+const $progressBar = $("#progressBar")
 const w = window
 const d = document
 const gmeetUrl = "https://meet.google.com/new"
-const gmeetId = "gmeet-window"
 let gmeetWindow
 let checkWindow
 
+const sleep = async (ms) => {
+    return new Promise((resolve) => window.setTimeout(resolve, ms))
+}
+
 const featuresToString = (object) => {
     const array = Object.keys(object)
-    const result = array.map((key) => `${key}=${object[key]}`)
-        .join(",") || ""
+    const result = array.map((key) => {
+            return `${key}=${object[key]}`
+        }).join(",") || ""
     return result
 }
 
@@ -21,7 +26,8 @@ const generate = () => {
     if (!btn) return
     if (!gmeetContainer) return
 
-    const generateGmeet = () => {
+    const generateGmeet = async () => {
+        $progressBar.removeClass("hide")
         $stop.prop("disabled", false).removeClass("hide")
         $start.addClass("hide")
         btn.disabled = true
@@ -36,14 +42,14 @@ const generate = () => {
             height,
         }
         gmeetWindow = w.open(
-            // gmeetUrl,
-            "/",
+            gmeetUrl,
             "_blank",
             featuresToString(windowFeatures)
         )
 
         if (!gmeetWindow) {
             alert("BLOCKED")
+            $progressBar.addClass("hide")
         }
 
         // TEST WINDOW OPEN
@@ -58,6 +64,9 @@ const generate = () => {
                 w.clearInterval(checkWindow)
             }
         }, 500)
+
+        await sleep(2500)
+        $progressBar.addClass("hide")
     }
 
     btn.onclick = generateGmeet
@@ -68,6 +77,7 @@ const remove = () => {
     if (!btn) return
 
     const removeGmeet = () => {
+        $progressBar.addClass("hide")
         $start.prop("disabled", false).removeClass("hide")
         $stop.addClass("hide")
         btn.disabled = true

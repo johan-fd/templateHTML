@@ -29,3 +29,22 @@ main {
 .paddingRight1rem {
     padding-right: 1rem;
 }
+
+.flat-text {
+    height: 25px;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.15);
+    display: block;
+    margin: 27px auto;
+}
+
+.flat-text.small {
+    width: 25%;
+    height: 25px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.example {
+    background-color: #26a69a;
+    height: 300px;
+}

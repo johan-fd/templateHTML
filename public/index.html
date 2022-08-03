@@ -1,67 +1,81 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="/media/favicon/gmeet.png">
-        <title>G-MEET-G</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/materialize-css@1.0.0/dist/css/materialize.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-        <!-- LOCAL CSS -->
-        <link href="/css/index.css" rel="stylesheet">
-        <!-- ERROR SCRIPT NOTIFIER -->
-        <script>
-            window.onerror = (message) => {
-                console.error(message)
-                alert(message)
-            }
-        </script>
-    </head>
 
-    <body>
-        <header>
-            <nav class="grey lighten-3">
-                <div class="nav-wrapper">
-                    <div class="btn-container right-align paddingRight1rem">
-                        <button
-                            class="btn-floating btn-large green
-                            waves-effect waves-dark tooltipped"
-                            data-tooltip="Generate Google Meet"
-                            data-position="left"
-                            id="gmeet-start">
-                            <i class="material-icons-round">smoking_rooms</i>
-                        </button>
-                        <button
-                            class="btn-floating btn-large red darken-3
-                            waves-effect waves-light tooltipped hide"
-                            data-tooltip="Remove Google Meet"
-                            data-position="left"
-                            id="gmeet-stop"
-                            disabled>
-                            <i class="material-icons-round">smoke_free</i>
-                        </button>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/media/favicon/gmeet.png">
+    <title>G-MEET-G</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/materialize-css@1.0.0/dist/css/materialize.min.css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+        rel="stylesheet">
+    <!-- LOCAL CSS -->
+    <link href="/css/index.css" rel="stylesheet">
+    <!-- ERROR SCRIPT NOTIFIER -->
+    <script>
+        window.onerror = (message) => {
+            console.error(message)
+            alert(message)
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav class="grey lighten-3">
+            <div class="nav-wrapper">
+                <div class="btn-container right-align paddingRight1rem">
+                    <button class="btn-floating btn-large green
+                            waves-effect waves-dark tooltipped" data-tooltip="Generate Google Meet"
+                        data-position="left" id="gmeet-start">
+                        <i class="material-icons-round">smoking_rooms</i>
+                    </button>
+                    <button class="btn-floating btn-large red darken-3
+                            waves-effect waves-light tooltipped hide" data-tooltip="Remove Google Meet"
+                        data-position="left" id="gmeet-stop" disabled>
+                        <i class="material-icons-round">smoke_free</i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="progress-wrap">
+            <div class="progress green darken-1 m-0 hide" id="progressBar">
+                <div class="indeterminate grey lighten-3"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="center">
+            <div class="container-gmeet">
+                <div id="gmeet" class="gmeet row">
+                    <div class="example col s12">
+                        <div class="container">
+                            <p class="flat-text small"></p>
+                            <p class="flat-text full-width"></p>
+                            <p class="flat-text full-width"></p>
+                            <p class="flat-text full-width"></p>
+                        </div>
+                    </div>
+                    <div class="example blue col s12">
+                        <div class="container">
+                            <p class="flat-text small"></p>
+                            <p class="flat-text full-width"></p>
+                            <p class="flat-text full-width"></p>
+                            <p class="flat-text full-width"></p>
+                        </div>
                     </div>
                 </div>
-            </nav>
-            <div class="progress-wrap">
-                <div class="progress green darken-1 m-0 hide" id="progressBar">
-                    <div class="indeterminate grey lighten-3"></div>
-                </div>
             </div>
-        </header>
+        </div>
+    </main>
 
-        <main>
-            <div class="center container">
-                <div class="container-gmeet">
-                    <div id="gmeet" class="gmeet"></div>
-                </div>
-            </div>
-        </main>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/materialize-css@1.0.0/dist/js/materialize.min.js"></script>
+    <!-- LOCAL SCRIPT -->
+    <script src="/javascript/test.js"></script>
+    <script type="module" src="/javascript/main.js"></script>
+</body>
 
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/materialize-css@1.0.0/dist/js/materialize.min.js"></script>
-        <!-- LOCAL SCRIPT -->
-        <script src="/javascript/test.js"></script>
-        <script type="module" src="/javascript/main.js"></script>
-    </body>
 </html>
